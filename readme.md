@@ -1,5 +1,6 @@
 ## ENSE 374
 
+The course I'm taking in Fall 2022
 * ENSE 352
 * ENSE 374
 * ENEL 384
