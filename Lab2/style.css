@@ -1,4 +1,13 @@
 body {
-    color: red;
-    background-color: grey;
+    background-color:#C5EDFF;
+    text-align: center;
+  }
+
+
+
+section
+  {
+    margin-top: 60px;
+    border:1px solid grey;
+    
   }
