@@ -1,0 +1,33 @@
+body {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2rem;
+    font-weight:300;
+  }
+.container{
+  background-color: #C5EDFF;
+  width:33%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10%;
+  box-shadow: 5px 5px 8px 5px #888888;
+  padding-top: 10px;
+  padding-bottom:20px;
+
+}
+
+h5{
+  text-align: left;
+}
+
+
+ul li {
+  background-color:beige;
+
+
+
+  margin-top: 5px;
+
+ padding-bottom: 10px;
+}
+
