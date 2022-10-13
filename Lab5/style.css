@@ -23,11 +23,14 @@ h5{
 
 ul li {
   background-color:beige;
-
-
-
+  text-align:left;
   margin-top: 5px;
 
  padding-bottom: 10px;
 }
+
+li{
+  padding-left:5px;
+}
+
 
