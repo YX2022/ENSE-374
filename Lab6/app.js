@@ -41,6 +41,7 @@ fs.readFile ( __dirname + "/object.json",
                 res.sendFile(__dirname + "/todo.html")
             }
             else{
+                console.log("wrong username or password");
                 res.redirect("/");
             }
           });
