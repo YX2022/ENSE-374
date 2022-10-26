@@ -1,6 +1,6 @@
 //  const fs = require( "fs" );
 
-// var myObj = { name : "Adam" ,
+// var myObj = { name : "yxr371" ,
 //             password:"123321"};
 
 // fs.writeFile ( __dirname + "/object.json", 
