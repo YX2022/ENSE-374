@@ -1,0 +1,24 @@
+<%- include("layouts/header") -%>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <% if (username === "Adam") { %>
+        <h1 class="my-heading">Welcome to my page, <%= username %>!</h1>
+    <% } else { %>
+        <h1 class="error-heading"> Sorry, I don't know you </h1>
+    <% } %>
+    
+    <p>My favourite mobile games are:</p>
+
+
+    <%- include("partials/list-module.ejs", { itemList : gameList }) -%>
+    <%- include("layouts/footer") -%>
+</body>
+</html>
