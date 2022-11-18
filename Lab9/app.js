@@ -159,7 +159,7 @@ app.post( "/addtask", function( req, res ) {
         isTaskDone: req.body.isTaskDone,
         isTaskCleared: req.body.isTaskCleared
     });
-    
+    res.redirect('todo');
 });
 ////////////////////////////////////////////////////////////////////
 
