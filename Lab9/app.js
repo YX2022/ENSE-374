@@ -1,7 +1,4 @@
 
-DB_HOST=localhost
-DB_USER=root
-
 process.env.DB_HOST
 
 const express = require ( "express" );
@@ -114,7 +111,7 @@ app.post( "/login", ( req, res ) => {
 
 app.get("/", (req, res) =>{
     console.log("A user is accessing the root route using get");
-    res.sendFile(__dirname + "/public/index.html");
+    res.sendFile(__dirname + "/index.html");
 });
 ////////////////////////////////////////////////////////////////////
 
@@ -124,26 +121,13 @@ app.get( "/todo", async( req, res ) => {
     if ( req.isAuthenticated() ){
         try {
             console.log( "was authorized and found:" );
-            const results = await Task.find();
-            console.log( results );
-            res.render( "reviews", { results : results });
+            res.render( "todo");
         } catch ( error ) {
             console.log( error );
         }
     } else {
         console.log( "was not authorized." );
         res.redirect( "/" );
-    }
-});
-
-app.get( "/add-review", ( req, res ) => {
-    console.log( "A user is accessing the add-review page, and..." );
-    if (req.isAuthenticated()) {
-        console.log( "was authorized" );
-        res.render( "add-review" );
-    } else {
-        console.log( "was not authorized" );
-        res.redirect( "/" ) 
     }
 });
 
@@ -160,22 +144,22 @@ app.get('/logout', function(req, res, next) {
   });
   ////////////////////////////////////////////////////////////////////
 
-  // 9. Submit a post to the database ////////////////////////////////
-// Note that in the username, we are using the username from the
-// session rather than the form
-app.post( "/submit", async( req, res ) => {
-    console.log( "User " + req.user.username + " is adding the review:" );
-    console.log( req.body )
-    const game = new Game({
-        userName:   req.user.username,
-        gameName:   req.body.gameName,
-        score:      parseInt( req.body.score ),
-        reviewText: req.body.reviewText
+
+
+
+
+app.post( "/addtask", function( req, res ) {
+    const task = new Task ({
+        _id : req.body._id,
+        text: req.body.text,
+        state: req.body.state,
+        creator: req.body.creator,
+        isTaskClaimed: req.body.isTaskClaimed,
+        claimingUser: req.body.claimingUser,
+        isTaskDone: req.body.isTaskDone,
+        isTaskCleared: req.body.isTaskCleared
     });
-
-    game.save();
-
-    res.redirect( "/reviews" );
+    
 });
 ////////////////////////////////////////////////////////////////////
 
